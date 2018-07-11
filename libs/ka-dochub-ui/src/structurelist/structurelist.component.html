@@ -1,0 +1,71 @@
+
+
+<div class="example-container mat-elevation-z8">
+
+    <div class="">
+      
+      <span class="breadcrumb">
+        <div class="example-header-table">
+          <span class="lbl-resume">
+            <label>Structure</label>
+          </span>
+          <mat-form-field class="mat-form-field-table template-filtersearch">
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+          </mat-form-field>
+        </div>
+      </span>
+      <button 
+      
+      color="primary" mat-raised-button="" type="submit" class="newsletter-add" [routerLink]="['structure']"  ng-reflect-color="primary">
+        <span class="mat-save-wrapper">Add Structure</span>
+        <div class="mat-button-ripple mat-ripple" matripple="" ng-reflect-centered="false" ng-reflect-disabled="false" ng-reflect-trigger="[object HTMLButtonElement]"></div>
+        <div class="mat-button-focus-overlay"></div>
+       </button>
+      
+      <mat-table  #table [dataSource]="dataSource" matSort>
+       
+        <ng-container matColumnDef="structurename">
+          <mat-header-cell *matHeaderCellDef mat-sort-header><u>Structure Name</u></mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.StructureName}} </mat-cell>
+        </ng-container>
+  
+      
+      <ng-container matColumnDef="createdate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <u>Created Date</u> </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.CrearedDate | date:'dd-MM-yyyy'}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="lastmodifiedDate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <u>Last Modified Date</u> </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.LastmodifiedDate | date:'dd-MM-yyyy'}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="createdby">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <u>Created By</u> </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.CreatedBy}} </mat-cell>
+      </ng-container>
+        <ng-container matColumnDef="action">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> <u>Action</u> </mat-header-cell>
+          <mat-cell *matCellDef="let row">
+          <span class="mat-icon-button" [matMenuTriggerFor]="menu">
+            <mat-icon>more_horiz</mat-icon>
+          </span>
+          <mat-menu #menu="matMenu" class="dropdown">
+              <button mat-menu-item [routerLink]="['edit-structure',row._id]"><mat-icon>mode_edit</mat-icon>Edit</button>
+              <button mat-menu-item (click)="openDialog(row);"><mat-icon>delete</mat-icon>Delete</button> 
+              <button mat-menu-item (click)="openDuplicateDialog(row);"><mat-icon>control_point_duplicate</mat-icon>Duplicate</button> 
+            </mat-menu>
+          </mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>  
+      <mat-paginator #paginator
+      [pageSize]="5"
+      [pageSizeOptions]="[5,10]">
+  </mat-paginator>
+    
+    </div>
+  </div>
+  

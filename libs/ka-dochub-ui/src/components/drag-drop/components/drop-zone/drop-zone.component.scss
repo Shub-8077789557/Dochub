@@ -1,0 +1,45 @@
+div#dropzone {
+    margin-top: 40px;
+}
+
+.template-save{
+    position: absolute;
+    top: 80px;
+    right: 120px;
+    display: inline-block;
+    background-color: #004080;
+}
+
+.template-cancel{
+    position: absolute;
+    top: 80px;
+    right: 25px;
+    display: inline-block;
+    background-color: #fff;
+    color:#000;
+}
+
+mat-card.adminfroalaHeader.mat-card {
+    width: 86%;
+    height:450px;
+    margin-left: 65px;
+    margin-top: 132px;
+}
+
+.fr-box.fr-basic.fr-top {
+    position: absolute;
+    top: 30px;
+}
+
+span.template-name {
+    position: absolute;
+    left: 90px;
+    top: 95px;
+    font-size: 20px;
+}
+
+mat-form-field.template-input{
+    position: absolute;
+    top: 80px;
+    left: 240px;
+}

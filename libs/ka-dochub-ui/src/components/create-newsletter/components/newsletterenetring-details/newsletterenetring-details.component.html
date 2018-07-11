@@ -1,0 +1,59 @@
+
+ 
+ 
+    <span class="newsletter-title">Newsletter</span>  
+    <button  mat-raised-button="" class="edit-save" (click)="onSubmit2(documentname.value)" color="primary" type="submit" value="Save">Save</button>
+     
+  <button  mat-raised-button=""[routerLink]="['/dashboard/newsletter-data']" type="submit" class="newsletter-cancel" >
+    <span class="mat-cancel-wrapper">Cancel</span>
+    <div class="mat-button-ripple mat-ripple" matripple="" ng-reflect-centered="false" ng-reflect-disabled="false" ng-reflect-trigger="[object HTMLButtonElement]"></div>
+    <div class="mat-button-focus-overlay"></div>
+   </button>
+   <span class="newsletter-input-title">Title</span>
+   <mat-form-field class="example-full-width newspaper-title-input">
+      <input matInput #documentname  placeholder="Title of Newsletter">
+    </mat-form-field>
+   <mat-card class="newsletterPanel">
+    <div class="description-title">Departments</div>
+  <mat-card class="newsletterPanelEdit">
+    <mat-tab-group class="demo-tab-group">
+      <mat-tab label="HR">
+        <div class="demo-tab-content">
+          <div class="sample">
+            <form [formGroup]="form2" (ngSubmit)="onSubmit2(documentname.value)">
+            <app-froala-component formControlName="HRmarkup"></app-froala-component>
+            </form>
+            
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Admin">
+        <div class="demo-tab-content">
+          <div class="sample">
+            <form [formGroup]="form3" (ngSubmit)="onSubmit2(documentname.value)">
+              <app-froala-component formControlName="Amarkup"></app-froala-component>   
+            </form>
+            
+          </div>
+         </div>  
+      </mat-tab>
+      <mat-tab label="Marketing">
+        <div class="demo-tab-content">
+          <div class="sample">
+            <form [formGroup]="form4" (ngSubmit)="onSubmit2(documentname.value)">
+              <app-froala-component formControlName="Mrmarkup"></app-froala-component>    
+            </form>
+            
+          </div>
+         </div>  
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+    </mat-card>
+  
+  
+  
+   
+
+
+

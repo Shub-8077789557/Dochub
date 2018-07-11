@@ -1,0 +1,207 @@
+.export-news-header{
+    background-image: url(/assets/img/header_background.png);
+    color:white;
+    font-weight: bold;
+    height: 50px;
+    padding-top: 20px;
+    width: 950px;
+    margin-left: -24px;
+}
+
+mat-card-header.export-news-header.mat-card-header {
+    margin-top: -24px;
+}
+
+.export-newspaper-container{
+    width: 900px;
+    height: 500px;
+    padding:0;
+}
+
+
+.export-news-list{
+    padding-top:16px;
+    padding-left:24px;
+}
+
+.selected-newspaper-list{
+    margin-top: 10px;
+    display: block;
+    height:470px;
+    margin-left: -24px;
+    padding-right: 45px;
+    position: absolute;
+    background-color: #ccc;
+}
+
+.newspaper-list-header{
+    display:block;
+    position: absolute;
+    height: 20px;
+    width: 191px;
+    margin-left: 0;
+    margin-top: -9px;
+    background-color: #8b8b8b;
+    padding-left:53px;
+}
+
+.export-news-footer{
+    display: block;
+    height: 45px;
+    width: 78%;
+    margin-top: 20px;
+    border-left: 1px solid #fff;
+    float: right;
+}
+
+// .download-label{
+//     float:right;
+//     padding-top: 15px;
+//     padding-right:200px;
+// }
+
+.download-pdf{
+    color:#3f51b5;;
+    font-weight: bold;
+    position: absolute;
+    text-decoration: none;
+    float:right;
+    padding-top: 15px;
+   padding-left:540px;
+}
+
+.download-html{
+    color:#3f51b5;;
+    font-weight: bold;
+    position: absolute;
+    text-decoration: none;
+    float:right;
+    padding-top: 15px;
+   padding-left:620px;
+}
+
+.structure-template-content{
+    display: block;
+    overflow-y: scroll;
+    height: 425px;
+    width: 704px;
+    margin-left: 218px;
+    border: 1px solid #8b8b8b;
+}
+
+.template{
+    margin-left: 5px;
+    position: absolute;
+    font-size: 19px;
+    padding-top: 10px;
+    padding-left: 10px; 
+}
+
+.structure{
+    margin-left: 5px;
+    position: absolute;
+    bottom: 195px;
+    padding-left: 10px;
+    font-size: 19px; 
+   
+}
+
+.temp-1{
+    width: 26%;
+    height: 28%;
+    margin-top: 40px;
+    margin-left: 10px;
+}
+
+.temp-2{
+    position: absolute;
+    margin-left: 250px;
+    top:90px;
+    width: 20%;
+    height: 24%;
+    margin-top: 20px;
+}
+
+.struc-1{
+    width: 27%;
+    height: 20%;
+    margin-top: 36px;
+    margin-left: 10px;
+}
+
+.struc-2{
+    margin-top: -133px;
+    width: 27%;
+    height: 20%;
+    margin-left: 255px;
+}
+
+.content-check{
+    bottom: 12px;
+    right:10px;
+    border-radius: 50px;
+    margin-left: 40px;
+    position: absolute;
+}
+
+.newsletterClose{
+    color:#fff;
+    font-weight:bold;
+    position:absolute;
+    right:10px;
+    cursor:pointer;
+}
+
+// mat-icon.pdf-symbol.mat-icon.mat-primary.material-icons {
+//     display: flex;
+//     margin-left: 510px;
+//     margin-top: 5px;
+//     // font-size: 30px;
+// }
+
+// mat-icon.html-symbol.mat-icon.mat-primary.material-icons {
+//     display: flex;
+//     margin-left: 515px;
+//     margin-top: 5px;
+//     // font-size: 30px;
+// }
+
+.export-table {
+    width: 300px;
+    position: absolute;
+    height: 432px;
+    background-color: #ccc;
+    overflow-x: hidden;
+    left: -24px;
+}
+
+mat-tab-group.structAndtempt {
+    width: 65%;
+    margin-left: 317px;
+}
+
+
+mat-card.structure-cards {
+    width: 32%;
+    height: 30%;
+    box-shadow: 5px 5px 5px #ccc;
+    margin-bottom:5px;
+    margin-left:20px;
+    
+}
+
+.mat-tab-body-content {
+    height: 380px;
+    overflow: auto;
+}
+
+mat-card.structure-cards.mat-card.ng-star-inserted {
+    float: right;
+    margin-right: 30px;
+}
+
+.export-radio-buttons{
+    float: right;
+    margin-top: 20px;
+}
+

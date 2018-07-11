@@ -1,0 +1,74 @@
+<mat-card class="export-newspaper-container">
+
+    <mat-card-header class="export-news-header">Export Newsletter
+        <mat-icon aria-label="Menu" (click)="onCloseClick();" 
+            class="material-icons newsletterClose">close</mat-icon>
+    </mat-card-header>
+
+    <mat-table class="export-table" #table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="select">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <!---<mat-checkbox (change)="$event ? masterToggle() : null"
+                              [checked]="selection.hasValue() && isAllSelected()"x>
+                </mat-checkbox>-->
+            <mat-cell *matCellDef="let row">
+                <mat-checkbox (click)="isAllSelected(row)" 
+                    (change)="$event ? selection.toggle(row) : null" 
+                    [checked]="selection.isSelected(row)">
+                </mat-checkbox>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="title" style="margin-right:-200px;">
+            <mat-header-cell *matHeaderCellDef mat-sort-header style="padding-right:120px;">
+                <u>Newsletters</u>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.documentname}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+    </mat-table>
+
+    <mat-tab-group class="structAndtempt">
+
+        <mat-tab label="Select Strcutures">
+            <div class="mat-tab-body-content">
+                <mat-radio-group [(ngModel)]="selectedStructure">
+                    <mat-card class="structure-cards" *ngFor="let structure of structures">
+                        <div style="text-align:center">{{structure.StructureName}}</div>
+                        <div style="padding-top: 10px;" [innerHtml]="stripHtml(structure.StructureMarkup)"></div>
+                        <mat-radio-button class="export-radio-buttons" [value]="structure"></mat-radio-button>
+                    </mat-card>
+                </mat-radio-group>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Select Templates">
+            <div class="mat-tab-body-content">
+                <mat-radio-group [(ngModel)]="selectedTemplate">
+                    <mat-card class="structure-cards" *ngFor="let template of templates">
+                        <div style="text-align:center">{{template.TemplateName}}</div>
+                        <div style="padding-top: 10px; text-align:center" [innerHtml]="stripHtml(template.Header)"></div>
+                        <div style="padding-top: 10px; text-align:center" [innerHtml]="stripHtml(template.Footer)"></div>
+                        <mat-radio-button class="export-radio-buttons" [value]="template"></mat-radio-button>
+                    </mat-card>
+                </mat-radio-group>
+            </div>
+        </mat-tab>
+
+    </mat-tab-group>
+
+    <mat-card-footer class="export-news-footer">
+        <span class="download-label">Download as:</span>
+        <button mat-icon-button>
+            <mat-icon color="primary" matTooltip="PDF" class="pdf-symbol" (click)="exportToPdf()">picture_as_pdf</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon color="primary" matTooltip="HTML" class="html-symbol">assignment</mat-icon>
+        </button>
+    </mat-card-footer>
+    
+</mat-card>

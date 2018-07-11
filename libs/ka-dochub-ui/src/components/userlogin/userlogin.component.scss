@@ -1,0 +1,31 @@
+mat-card.example-card.mat-card {
+    box-shadow: 2px 2px 7px 6px #888888;
+}
+
+mat-toolbar.example-header.mat-toolbar.mat-primary.mat-toolbar-single-row[_ngcontent-c1] {
+    width: 1365px;
+    margin-left: 0px;
+    background-image: url(/assets/img/header_background.png);
+}
+
+img.footer-img{
+    position: absolute;
+    right: 1px;
+    width: 100%;
+    height: 160px;
+    margin-top: 40px;
+}
+
+.d-symbol{
+    margin-right:10px;
+}
+
+.main-card{
+ background-image: linear-gradient(rgba(0,0,0.55,0.35),rgba(0,0,0.55,0.35)), url(/assets/img/doc3.jpg);
+ background-size:cover;
+ background-position: center;
+ width:185vh;
+ height:75vh;
+ margin-left:-8px;
+}
+

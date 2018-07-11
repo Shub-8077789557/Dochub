@@ -1,0 +1,43 @@
+<ng-container>
+  <mat-toolbar class="example-header" color="primary">
+    <img src="assets/img/D-Logo.png" class="d-symbol">
+    <h2>DocHub</h2>
+  </mat-toolbar>
+</ng-container>
+  <div align="center" class="main-card">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div  class="example-header-image"></div>
+      </mat-card-header>  
+      <form #LoginFormControl="ngForm" (submit) = "onloginSubmit()">   
+      <mat-card-content>  
+            <mat-card-title>Login</mat-card-title>
+          <mat-form-field>
+            <span>
+              <input matInput placeholder="User Name" class="example-full-width" [(ngModel)] = "username" name="username" required>
+            </span>
+            <mat-error *ngIf="LoginFormControl.hasError('required')">
+              User Name is
+              <strong>required</strong>
+            </mat-error>  
+          </mat-form-field>
+          <mat-form-field>
+            <span>
+              <input matInput placeholder="Password" class="example-full-width" [(ngModel)] = "password" name="password" [type]=" hide ? 'password' : 'text'" required>
+            </span>  
+            <mat-icon matSuffix (click)="hide = !hide">{{ hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+            <mat-error *ngIf="LoginFormControl.hasError('required')">
+              User Name is
+              <strong>required</strong>
+            </mat-error>  
+          </mat-form-field>
+          <span>
+            <button mat-raised-button  style="background-color: #004080; color:#fff;" type="submit" [disabled]="LoginFormControl.invalid"  value="login">Login</button>
+          </span> 
+        </mat-card-content>
+      </form>
+      </mat-card>
+      <img src="/assets/img/Footer_wpd.png" class="footer-img">
+    </div>
+
+    

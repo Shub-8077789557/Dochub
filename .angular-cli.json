@@ -1,0 +1,83 @@
+{
+  "$schema": "./node_modules/@nrwl/schematics/src/schema.json",
+  "project": {
+    "name": "dochub",
+    "npmScope": "DOCHUB",
+    "latestMigration": "20180313-add-tags"
+  },
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "./tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "apps": [
+    {
+      "name": "dochub",
+      "root": "apps/dochub/src",
+      "outDir": "dist/apps/dochub",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "../../../test.js",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "../../../tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.scss",
+        "../../../node_modules/font-awesome/css/font-awesome.css",
+        "../../../node_modules/froala-editor/css/froala_editor.pkgd.min.css",
+        "../../../node_modules/froala-editor/css/froala_style.min.css"
+      ],
+      "scripts": [
+        "../../../node_modules/jquery/dist/jquery.min.js",
+        "../../../node_modules/froala-editor/js/froala_editor.pkgd.min.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      },
+      "tags": []
+    },
+    {
+      "name": "ka-dochub-ui",
+      "root": "libs/ka-dochub-ui/src",
+      "test": "../../../test.js",
+      "appRoot": "",
+      "tags": []
+    },
+    {
+      "name": "$workspaceRoot",
+      "root": ".",
+      "appRoot": ""
+    }
+  ],
+  "defaults": {
+    "schematics": {
+      "collection": "@nrwl/schematics"
+    },
+    "serve": {
+      "port": 4222
+    },
+    "styleExt": "scss",
+    "component": {}
+  },
+  "warnings": {
+    "typescriptMismatch": false
+  }
+}

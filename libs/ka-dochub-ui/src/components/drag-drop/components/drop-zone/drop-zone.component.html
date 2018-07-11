@@ -1,0 +1,649 @@
+<!-- <section>
+  <aside class="asideright" id="dropDivaside">
+  <div id="dropzone">
+      <h4>DropZone</h4>
+  <mat-card id="divHeading">Place to drop (Items)</mat-card>
+      <mat-card id="dropDiv" dnd-droppable (onDropSuccess)="transferDataDrop($event)">
+          
+                  <div #gridContainer12 class="maincontainer">
+                      <ng-template #gridView12 let-grid12="grid12">
+                          <mat-grid-list id="grid12List" class="griddelete" cols="12" rowHeight="300px" [ngSwitch] = "tilesgrid12">
+                              <mat-grid-tile id="gridLay12" [dragData]="{id: 'gridLay12'}" dnd-draggable="true" dnd-droppable="true" [dragEnabled]="true" [dropEnabled]="true"  (onDropSuccess)="transferLayoutinner($event)"  
+                                  *ngSwitchCase = "tilesgrid12" [colspan]="tilesgrid12[0].cols" [rowspan]="tilesgrid12[0].rows" [style.border]="tilesgrid12[0].border">    
+                                  <div class="divdropinner" dnd-droppable (onDropSuccess)="transferLayoutinner($event)">
+                                
+                                                    <div #gridContainer12 class="gridlist12">
+                                                        <ng-template #gridView12 let-grid12="grid12">
+                                                            <mat-grid-list cols="12" rowHeight="100px" [ngSwitch] = "tilesgrid12">
+                                                                <mat-grid-tile class="griddelete" id="grid12" dnd-draggable="true" [dragEnabled]="true"  
+                                                                    *ngSwitchCase = "tilesgrid12" [colspan]="tilesgrid12[0].cols" [rowspan]="tilesgrid12[0].rows" [style.border]="tilesgrid12[0].border">
+                                                                    <div dnd-droppable style="width:90%; height: 80px;"></div>
+                                                                </mat-grid-tile>
+                                                                <button mat-raised-button class="btndrag" (click)="btnDelete($event)">Drag</button>
+                                                                <button mat-raised-button class="btndelete" (click)="btnDelete($event)">Remove</button>
+                                                            </mat-grid-list>
+                                                        </ng-template>
+                                                    </div>
+
+
+                                                    <div #gridContainer6>
+                                                        <ng-template #gridView6 let-grid6="grid6">
+                                                            <mat-grid-list cols="12" rowHeight="100px" [ngSwitch] = "tilesgrid6" >
+                                                                <mat-grid-tile class="griddelete" id="grid6" dnd-draggable="true" [dragEnabled]="true"
+                                                                    *ngSwitchCase = "tilesgrid6" [colspan] = "tilesgrid6[0].cols" [rowspan] = "tilesgrid6[0].rows" [style.border]="tilesgrid6[0].border">
+                                                                        <div dnd-droppable style="width:90%; height: 80px;"></div>
+                                                                </mat-grid-tile>
+
+                                                                <mat-grid-tile id="grid6" dnd-droppable dnd-droppable dnd-draggable="true" [dragEnabled]="true"
+                                                                    *ngSwitchCase = "tilesgrid6" [colspan] = "tilesgrid6[0].cols" [rowspan] = "tilesgrid6[0].rows" [style.border]="tilesgrid6[0].border">
+                                                                        <div dnd-droppable style="width:90%; height: 80px;"></div>
+                                                                </mat-grid-tile>
+                                                                    <button mat-raised-button class="btndrag" (click)="btnDelete($event)">Drag</button>
+                                                                    <button mat-raised-button class="btndelete" (click)="btnDelete($event)">Remove</button>
+                                                            </mat-grid-list>
+                                                        </ng-template>
+                                                    </div>
+
+                                                    <div #gridContainer4>
+                                                        <ng-template #gridView4 let-grid4="grid4" >
+                                                            <mat-grid-list dnd-draggable="true" [dragEnabled]="true" class="griddelete" cols="12" rowHeight="100px" [ngSwitch] = "tilesgrid4" >
+                                                                <mat-grid-tile id="grid4" dnd-droppable
+                                                                    *ngSwitchCase = "tilesgrid4" [colspan] = "tilesgrid4[0].cols" [rowspan] = "tilesgrid4[0].rows" [style.border]="tilesgrid4[0].border">
+                                                                        <div dnd-droppable style="width:90%; height: 80px;"></div>
+                                                                </mat-grid-tile>
+                                                                <mat-grid-tile id="grid4"
+                                                                    *ngSwitchCase = "tilesgrid4" [colspan] = "tilesgrid4[0].cols" [rowspan] = "tilesgrid4[0].rows" [style.border]="tilesgrid4[0].border">
+                                                                        <div dnd-droppable style="width:90%; height: 80px;"></div>
+                                                                </mat-grid-tile>
+                                                                <mat-grid-tile id="grid4"
+                                                                    *ngSwitchCase = "tilesgrid4" [colspan] = "tilesgrid4[0].cols" [rowspan] = "tilesgrid4[0].rows" [style.border]="tilesgrid4[0].border">
+                                                                        <div dnd-droppable style="width:90%; height: 80px;"></div>
+                                                                </mat-grid-tile>
+                                                                <button mat-raised-button class="btndrag" (click)="btnDelete($event)">Drag</button>
+                                                                <button mat-raised-button class="btndelete" (click)="btnDelete($event)">Remove</button>
+                                                            </mat-grid-list>
+                                                        </ng-template>
+                                                        </div>
+
+                                                        <div #gridContainer3>
+                                                            <ng-template #gridView3 let-grid3="grid3" >
+                                                                <mat-grid-list  dnd-droppable dnd-draggable="true" [dragEnabled]="true" class="griddelete" cols="12" rowHeight="100px" [ngSwitch] = "tilesgrid3" >
+                                                                    <mat-grid-tile id="grid3"
+                                                                        *ngSwitchCase = "tilesgrid3" [colspan] = "tilesgrid3[0].cols" [rowspan] = "tilesgrid3[0].rows" [style.border]="tilesgrid3[0].border">
+                                                                            <div dnd-droppable style="width:90%; height: 80px;"></div>
+                                                                    </mat-grid-tile>
+                                                                    <mat-grid-tile id="grid3"
+                                                                        *ngSwitchCase = "tilesgrid3" [colspan] = "tilesgrid3[0].cols" [rowspan] = "tilesgrid3[0].rows" [style.border]="tilesgrid3[0].border">
+                                                                            <div dnd-droppable style="width:90%; height: 80px;"></div>
+                                                                    </mat-grid-tile>
+                                                                    <mat-grid-tile id="grid3"
+                                                                        *ngSwitchCase = "tilesgrid3" [colspan] = "tilesgrid3[0].cols" [rowspan] = "tilesgrid3[0].rows" [style.border]="tilesgrid3[0].border">
+                                                                            <div dnd-droppable style="width:90%; height: 80px;"></div>
+                                                                    </mat-grid-tile>
+                                                                    <mat-grid-tile id="grid3"
+                                                                        *ngSwitchCase = "tilesgrid3" [colspan] = "tilesgrid3[0].cols" [rowspan] = "tilesgrid3[0].rows" [style.border]="tilesgrid3[0].border">
+                                                                            <div dnd-droppable style="width:90%; height: 80px;"></div>
+                                                                    </mat-grid-tile>
+                                                                    <button mat-raised-button class="btndrag" (click)="btnDelete($event)">Drag</button>
+                                                                    <button mat-raised-button class="btndelete" (click)="btnDelete($event)">Remove</button>
+                                                                </mat-grid-list>
+                                                            </ng-template>
+                                                            </div>  
+                                                            
+                                                            <div #gridContainer2>
+                                                                    <ng-template #gridView2 let-grid2="grid2" >
+                                                                        <mat-grid-list dnd-droppable dnd-draggable="true" [dragEnabled]="true" class="griddelete" cols="12" rowHeight="100px" [ngSwitch] = "tilesgrid2" >
+                                                                            <mat-grid-tile id="grid2" 
+                                                                                *ngSwitchCase = "tilesgrid2" [colspan] = "tilesgrid2[0].cols" [rowspan] = "tilesgrid2[0].rows" [style.border]="tilesgrid2[0].border">
+                                                                            </mat-grid-tile>
+                                                                            <mat-grid-tile id="grid2" 
+                                                                                *ngSwitchCase = "tilesgrid2" [colspan] = "tilesgrid2[0].cols" [rowspan] = "tilesgrid2[0].rows" [style.border]="tilesgrid2[0].border">
+                                                                            </mat-grid-tile>
+                                                                            <mat-grid-tile id="grid2" 
+                                                                                *ngSwitchCase = "tilesgrid2" [colspan] = "tilesgrid2[0].cols" [rowspan] = "tilesgrid2[0].rows" [style.border]="tilesgrid2[0].border">
+                                                                            </mat-grid-tile>
+                                                                            <mat-grid-tile id="grid2" 
+                                                                                *ngSwitchCase = "tilesgrid2" [colspan] = "tilesgrid2[0].cols" [rowspan] = "tilesgrid2[0].rows" [style.border]="tilesgrid2[0].border">
+                                                                            </mat-grid-tile>
+                                                                            <mat-grid-tile id="grid2" 
+                                                                                *ngSwitchCase = "tilesgrid2" [colspan] = "tilesgrid2[0].cols" [rowspan] = "tilesgrid2[0].rows" [style.border]="tilesgrid2[0].border">
+                                                                            </mat-grid-tile>
+                                                                            <mat-grid-tile id="grid2" 
+                                                                                *ngSwitchCase = "tilesgrid2" [colspan] = "tilesgrid2[0].cols" [rowspan] = "tilesgrid2[0].rows" [style.border]="tilesgrid2[0].border">
+                                                                            </mat-grid-tile>
+                                                                            <button mat-raised-button class="btndrag" (click)="btnDelete($event)">Drag</button>
+                                                                            <button mat-raised-button class="btndelete" (click)="btnDelete($event)">Remove</button>
+                                                                        </mat-grid-list>
+                                                                    </ng-template>
+                                                                    </div>
+
+                                  </div>
+                              </mat-grid-tile>
+                              <button mat-raised-button class="btndrag">Drag</button>
+                              <button mat-raised-button class="btndelete" (click)="btnDelete($event)">Remove</button>
+                          </mat-grid-list>
+                      </ng-template>
+                  </div>
+
+                  <div #gridContainer6>
+                      <ng-template #gridView6 let-grid6="grid6">
+                          <mat-grid-list class="griddelete" cols="12" rowHeight="100px" [ngSwitch] = "tilesgrid6" >
+                              <mat-grid-tile id="grid6" dnd-draggable="true" [dragEnabled]="true"
+                                  *ngSwitchCase = "tilesgrid6" [colspan] = "tilesgrid6[0].cols" [rowspan] = "tilesgrid6[0].rows" [style.border]="tilesgrid6[0].border">
+                                      <div dnd-droppable style="width:90%; height: 80px;"></div>
+                              </mat-grid-tile>
+                              <mat-grid-tile id="grid6" dnd-droppable dnd-droppable dnd-draggable="true" [dragEnabled]="true"
+                                  *ngSwitchCase = "tilesgrid6" [colspan] = "tilesgrid6[0].cols" [rowspan] = "tilesgrid6[0].rows" [style.border]="tilesgrid6[0].border">
+                                      <div dnd-droppable style="width:90%; height: 80px;"></div>
+                              </mat-grid-tile>
+                              <button mat-raised-button class="btndrag" (click)="btnDelete($event)">Drag</button>
+                              <button mat-raised-button class="btndelete" (click)="btnDelete($event)">Remove</button>
+                          </mat-grid-list>
+                      </ng-template>
+                  </div>
+                             
+                      <div #gridContainer4>
+                              <ng-template #gridView4 let-grid4="grid4" >
+                                  <mat-grid-list dnd-draggable="true" [dragEnabled]="true" class="griddelete" cols="12" rowHeight="100px" [ngSwitch] = "tilesgrid4" >
+                                      <mat-grid-tile id="grid4" dnd-droppable
+                                          *ngSwitchCase = "tilesgrid4" [colspan] = "tilesgrid4[0].cols" [rowspan] = "tilesgrid4[0].rows" [style.border]="tilesgrid4[0].border">
+                                              <div dnd-droppable style="width:90%; height: 80px;"></div>
+                                      </mat-grid-tile>
+                                      <mat-grid-tile id="grid4"
+                                          *ngSwitchCase = "tilesgrid4" [colspan] = "tilesgrid4[0].cols" [rowspan] = "tilesgrid4[0].rows" [style.border]="tilesgrid4[0].border">
+                                              <div dnd-droppable style="width:90%; height: 80px;"></div>
+                                      </mat-grid-tile>
+                                      <mat-grid-tile id="grid4"
+                                          *ngSwitchCase = "tilesgrid4" [colspan] = "tilesgrid4[0].cols" [rowspan] = "tilesgrid4[0].rows" [style.border]="tilesgrid4[0].border">
+                                              <div dnd-droppable style="width:90%; height: 80px;"></div>
+                                      </mat-grid-tile>
+                                      <button mat-raised-button class="btndrag" (click)="btnDelete($event)">Drag</button>
+                                      <button mat-raised-button class="btndelete" (click)="btnDelete($event)">Remove</button>
+                                  </mat-grid-list>
+                              </ng-template>
+                              </div>  
+                      
+                      <div #gridContainer3>
+                              <ng-template #gridView3 let-grid3="grid3" >
+                                  <mat-grid-list  dnd-droppable dnd-draggable="true" [dragEnabled]="true" class="griddelete" cols="12" rowHeight="100px" [ngSwitch] = "tilesgrid3" >
+                                      <mat-grid-tile id="grid3"
+                                          *ngSwitchCase = "tilesgrid3" [colspan] = "tilesgrid3[0].cols" [rowspan] = "tilesgrid3[0].rows" [style.border]="tilesgrid3[0].border">
+                                              <div dnd-droppable style="width:90%; height: 80px;"></div>
+                                      </mat-grid-tile>
+                                      <mat-grid-tile id="grid3"
+                                          *ngSwitchCase = "tilesgrid3" [colspan] = "tilesgrid3[0].cols" [rowspan] = "tilesgrid3[0].rows" [style.border]="tilesgrid3[0].border">
+                                              <div dnd-droppable style="width:90%; height: 80px;"></div>
+                                      </mat-grid-tile>
+                                      <mat-grid-tile id="grid3"
+                                          *ngSwitchCase = "tilesgrid3" [colspan] = "tilesgrid3[0].cols" [rowspan] = "tilesgrid3[0].rows" [style.border]="tilesgrid3[0].border">
+                                              <div dnd-droppable style="width:90%; height: 80px;"></div>
+                                      </mat-grid-tile>
+                                      <mat-grid-tile id="grid3"
+                                          *ngSwitchCase = "tilesgrid3" [colspan] = "tilesgrid3[0].cols" [rowspan] = "tilesgrid3[0].rows" [style.border]="tilesgrid3[0].border">
+                                              <div dnd-droppable style="width:90%; height: 80px;"></div>
+                                      </mat-grid-tile>
+                                      <button mat-raised-button class="btndrag" (click)="btnDelete($event)">Drag</button>
+                                      <button mat-raised-button class="btndelete" (click)="btnDelete($event)">Remove</button>
+                                  </mat-grid-list>
+                              </ng-template>
+                              </div>  
+                              
+                              <div #gridContainer2>
+                                      <ng-template #gridView2 let-grid2="grid2" >
+                                          <mat-grid-list dnd-droppable dnd-draggable="true" [dragEnabled]="true" class="griddelete" cols="12" rowHeight="100px" [ngSwitch] = "tilesgrid2" >
+                                              <mat-grid-tile id="grid2" 
+                                                  *ngSwitchCase = "tilesgrid2" [colspan] = "tilesgrid2[0].cols" [rowspan] = "tilesgrid2[0].rows" [style.border]="tilesgrid2[0].border">
+                                              </mat-grid-tile>
+                                              <mat-grid-tile id="grid2" 
+                                                  *ngSwitchCase = "tilesgrid2" [colspan] = "tilesgrid2[0].cols" [rowspan] = "tilesgrid2[0].rows" [style.border]="tilesgrid2[0].border">
+                                              </mat-grid-tile>
+                                              <mat-grid-tile id="grid2" 
+                                                  *ngSwitchCase = "tilesgrid2" [colspan] = "tilesgrid2[0].cols" [rowspan] = "tilesgrid2[0].rows" [style.border]="tilesgrid2[0].border">
+                                              </mat-grid-tile>
+                                              <mat-grid-tile id="grid2" 
+                                                  *ngSwitchCase = "tilesgrid2" [colspan] = "tilesgrid2[0].cols" [rowspan] = "tilesgrid2[0].rows" [style.border]="tilesgrid2[0].border">
+                                              </mat-grid-tile>
+                                              <mat-grid-tile id="grid2" 
+                                                  *ngSwitchCase = "tilesgrid2" [colspan] = "tilesgrid2[0].cols" [rowspan] = "tilesgrid2[0].rows" [style.border]="tilesgrid2[0].border">
+                                              </mat-grid-tile>
+                                              <mat-grid-tile id="grid2" 
+                                                  *ngSwitchCase = "tilesgrid2" [colspan] = "tilesgrid2[0].cols" [rowspan] = "tilesgrid2[0].rows" [style.border]="tilesgrid2[0].border">
+                                              </mat-grid-tile>
+                                              <button mat-raised-button class="btndrag" (click)="btnDelete($event)">Drag</button>
+                                              <button mat-raised-button class="btndelete" (click)="btnDelete($event)">Remove</button>
+                                          </mat-grid-list>
+                                      </ng-template>
+                                      </div>                             
+                      <ng-template>
+                          <ng-container *ngTemplateOutlet="gridView12; context:grid12Context"></ng-container>
+                          <ng-container *ngTemplateOutlet="gridView6; context:grid6Context"></ng-container>
+                          <ng-container *ngTemplateOutlet="gridView4; context:grid4Context"></ng-container>
+                          <ng-container *ngTemplateOutlet="gridView3; context:grid3Context"></ng-container>
+                          <ng-container *ngTemplateOutlet="gridView2; context:grid2Context"></ng-container>
+                      </ng-template>
+  </mat-card>
+</div>
+</aside>
+</section> -->
+
+
+
+<section>
+        <button 
+      color="primary" mat-raised-button="" type="submit" class="template-save" (click)=" templateSave(templatename.value);" ng-reflect-color="primary">
+          <span class="mat-save-wrapper">Save</span>
+          <div class="mat-button-ripple mat-ripple" matripple="" ng-reflect-centered="false" ng-reflect-disabled="false" ng-reflect-trigger="[object HTMLButtonElement]"></div>
+          <div class="mat-button-focus-overlay"></div>
+         </button>
+         <button 
+     color="primary" mat-raised-button="" type="submit" class="template-cancel"  ng-reflect-color="primary">
+          <span class="mat-save-wrapper">Cancel</span>
+          <div class="mat-button-ripple mat-ripple" matripple="" ng-reflect-centered="false" ng-reflect-disabled="false" ng-reflect-trigger="[object HTMLButtonElement]"></div>
+          <div class="mat-button-focus-overlay"></div>
+         </button> 
+         <span class="template-name">Template Name</span>
+         <mat-form-field class="template-input">
+            <input matInput #templatename  placeholder="Templatename">
+          </mat-form-field>
+         <mat-card class="adminfroalaHeader"> 
+                <div style="position:absolute; top:5px;">Header</div>
+                <form [formGroup]="form3" (ngSubmit)="templateSave(templatename.value)" style="top: 30px;left:0px; position: absolute;">
+                    <app-froala-component formControlName="headermarkup"></app-froala-component>       
+                       
+                    </form>
+                     <div style="position:absolute; top:275px;">Footer</div>
+               <form [formGroup]="form4" (ngSubmit)="templateSave(templatename.value)" style="position:absolute; top:300px; left:0px;">
+                <app-froala-component formControlName="footermarkup"></app-froala-component>    
+                  
+                </form>     
+              
+            </mat-card>
+    <!--<aside class="asideright" id="dropDivaside">
+    <div id="dropzone">
+    <mat-card id="divHeading">Place to drop (Items)</mat-card>
+        <mat-card class="maindropzone" id="dropDiv" dnd-droppable (onDropSuccess)="transferDataDrop($event)">
+            
+                <div #gridContainer12 class="maincontainer">
+                    <ng-template #gridView12 let-grid12="grid12">
+                        <div class="flex-col-12" id="flex12" fxLayout="row" fxFlex="100%">
+                            <div fxFlex="100%" class="flex12" id="grid12">
+                                <div class="DeleteDragDiv">
+                                    <button mat-raised-button (click)="btnDelete($event)"><mat-icon>delete</mat-icon></button>
+                                    <button mat-raised-button (click)="btnDelete($event)"><mat-icon>open_with</mat-icon></button>
+                                </div>
+                                <div class="flexinner12" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                    (onDropSuccess)="transferDataDrop($event)">
+                                    
+                                    <div #gridContainer6>
+                                            <ng-template #gridView6 let-grid6="grid6">
+                                                <div class="flex-col-6" id="grid6" fxFlex="100%">
+                                                    <div class="DeleteDragDiv">
+                                                        <button mat-raised-button (click)="btnDelete($event)"><mat-icon>delete</mat-icon></button>
+                                                        <button mat-raised-button (click)="btnDelete($event)"><mat-icon>open_with</mat-icon></button>
+                                                        <div fxLayout="row">
+                                                            <div fxFlex="50%" class="flex6" id="grid6">
+                                                                <div class="flexinner6" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                    (onDropSuccess)="transferDataDrop($event)">
+                                                                </div>
+                                                            </div>
+                                                            <div fxFlex="50%" class="flex6" id="grid6">
+                                                                <div class="flexinner6" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                    (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ng-template>
+                                        </div>
+                                    
+                                        <div #gridContainer4>
+                                                <ng-template #gridView4 let-grid4="grid4">
+                                                    <div class="flex-col-4" id="flex4" fxFlex="100%" fxLayout="row">
+                                                        <div class="DeleteDragDiv">
+                                                            <button mat-raised-button (click)="btnDelete($event)"><mat-icon>delete</mat-icon></button>
+                                                            <button mat-raised-button (click)="btnDelete($event)"><mat-icon>open_with</mat-icon></button>
+                                                            <div fxLayout="row">
+                                                                <div fxFlex="33.33%" class="flex4" id="grid4">
+                                                                    <div class="flexinner4" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                        (onDropSuccess)="transferDataDrop($event)">
+                                                                    </div>
+                                                                </div>
+                                                                <div fxFlex="33.33%" class="flex4" id="grid4">
+                                                                    <div class="flexinner4" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                        (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                    </div>
+                                                                </div>
+                                                                <div fxFlex="33.33%" class="flex4" id="grid4">
+                                                                        <div class="flexinner4" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                            (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                        </div>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </ng-template>
+                                            </div>
+
+                                            <div #gridContainer3>
+                                                    <ng-template #gridView3 let-grid3="grid3">
+                                                        <div class="flex-col-3" id="flex3" fxFlex="100%">
+                                                            <div class="DeleteDragDiv">
+                                                                <button mat-raised-button (click)="btnDelete($event)"><mat-icon>delete</mat-icon></button>
+                                                                <button mat-raised-button (click)="btnDelete($event)"><mat-icon>open_with</mat-icon></button>
+                                                                <div fxLayout="row">
+                                                                    <div fxFlex="25%" class="flex3" id="grid3">
+                                                                        <div class="flexinner3" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                            (onDropSuccess)="transferDataDrop($event)">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div fxFlex="25%" class="flex3" id="grid3">
+                                                                        <div class="flexinner3" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                            (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                        </div>
+                                                                    </div>
+                                                                    <div fxFlex="25%" class="flex3" id="grid3">
+                                                                            <div class="flexinner3" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                                (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                            </div>
+                                                                        </div>
+                                                                        <div fxFlex="25%" class="flex3" id="grid3">
+                                                                                <div class="flexinner3" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                                    (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                                </div>
+                                                                            </div>    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ng-template>
+                                                </div>
+
+                                                <div #gridContainer2>
+                                                    <ng-template #gridView2 let-grid2="grid2">
+                                                        <div class="flex-col-2" id="flex2" fxFlex="100%">
+                                                            <div class="DeleteDragDiv">
+                                                                <button mat-raised-button (click)="btnDelete($event)"><mat-icon>delete</mat-icon></button>
+                                                                <button mat-raised-button (click)="btnDelete($event)"><mat-icon>open_with</mat-icon></button>
+                                                                <div fxLayout="row">
+                                                                    <div fxFlex="16.66%" class="flex2" id="grid2">
+                                                                        <div class="flexinner2" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                            (onDropSuccess)="transferDataDrop($event)">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div fxFlex="16.66%" class="flex2" id="grid2">
+                                                                        <div class="flexinner2" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                            (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                        </div>
+                                                                    </div>
+                                                                    <div fxFlex="16.66%" class="flex2" id="grid2">
+                                                                            <div class="flexinner2" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                                (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                            </div>
+                                                                   </div>
+                                                                    <div fxFlex="16.66%" class="flex2" id="grid2">
+                                                                        <div class="flexinner2" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                            (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                        </div>
+                                                                    </div>
+                                                                    <div fxFlex="16.66%" class="flex2" id="grid2">
+                                                                        <div class="flexinner2" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                            (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                        </div>
+                                                                    </div>
+                                                                    <div fxFlex="16.66%" class="flex2" id="grid2">
+                                                                        <div class="flexinner2" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                            (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                         </div>
+                                                                    </div>            
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ng-template>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </div>
+
+                <div #gridContainer6>
+                        <ng-template #gridView6 let-grid6="grid6">
+                            <div class="flex-col-6" id="flex6" fxFlex="100%">
+                                <div class="DeleteDragDiv">
+                                    <button mat-raised-button (click)="btnDelete($event)"><mat-icon>delete</mat-icon></button>
+                                    <button mat-raised-button (click)="btnDelete($event)"><mat-icon>open_with</mat-icon></button>
+                                    <div fxLayout="row">
+                                        <div fxFlex="50%" class="flex6" id="grid6">
+                                            <div class="flexinner6" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                (onDropSuccess)="transferDataDrop($event)">
+                                            </div>
+                                        </div>
+                                        <div fxFlex="50%" class="flex6" id="grid6">
+                                            <div class="flexinner6" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </div>
+
+                    <div #gridContainer4>
+                            <ng-template #gridView4 let-grid4="grid4">
+                                <div class="flex-col-4" id="flex4" fxFlex="100%" fxLayout="row">
+                                    <div class="DeleteDragDiv">
+                                        <button mat-raised-button (click)="btnDelete($event)"><mat-icon>delete</mat-icon></button>
+                                        <button mat-raised-button (click)="btnDelete($event)"><mat-icon>open_with</mat-icon></button>
+                                        <div fxLayout="row">
+                                            <div fxFlex="33.33%" class="flex4" id="grid4">
+                                                <div class="flexinner4" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                    (onDropSuccess)="transferDataDrop($event)">
+                                                </div>
+                                            </div>
+                                            <div fxFlex="33.33%" class="flex4" id="grid4">
+                                                <div class="flexinner4" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                    (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                </div>
+                                            </div>
+                                            <div fxFlex="33.33%" class="flex4" id="grid4">
+                                                    <div class="flexinner4" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                        (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </div>
+
+                        <div #gridContainer3>
+                                <ng-template #gridView3 let-grid3="grid3">
+                                    <div class="flex-col-3" id="flex3" fxFlex="100%">
+                                        <div class="DeleteDragDiv">
+                                            <button mat-raised-button (click)="btnDelete($event)"><mat-icon>delete</mat-icon></button>
+                                            <button mat-raised-button (click)="btnDelete($event)"><mat-icon>open_with</mat-icon></button>
+                                            <div fxLayout="row">
+                                                <div fxFlex="25%" class="flex3" id="grid3">
+                                                    <div class="flexinner3" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                        (onDropSuccess)="transferDataDrop($event)">
+                                                    </div>
+                                                </div>
+                                                <div fxFlex="25%" class="flex3" id="grid3">
+                                                    <div class="flexinner3" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                        (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                    </div>
+                                                </div>
+                                                <div fxFlex="25%" class="flex3" id="grid3">
+                                                        <div class="flexinner3" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                            (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                        </div>
+                                                    </div>
+                                                    <div fxFlex="25%" class="flex3" id="grid3">
+                                                            <div class="flexinner3" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                            </div>
+                                                        </div>    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </div>
+
+                            <div #gridContainer2>
+                                    <ng-template #gridView2 let-grid2="grid2">
+                                        <div class="flex-col-2" id="flex2" fxFlex="100%">
+                                            <div class="DeleteDragDiv">
+                                                <button mat-raised-button (click)="btnDelete($event)"><mat-icon>delete</mat-icon></button>
+                                                <button mat-raised-button (click)="btnDelete($event)"><mat-icon>open_with</mat-icon></button>
+                                                <div fxLayout="row">
+                                                    <div fxFlex="16.66%" class="flex2" id="grid2">
+                                                        <div class="flexinner2" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                            (onDropSuccess)="transferDataDrop($event)">
+                                                        </div>
+                                                    </div>
+                                                    <div fxFlex="16.66%" class="flex2" id="grid2">
+                                                        <div class="flexinner2" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                            (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                        </div>
+                                                    </div>
+                                                    <div fxFlex="16.66%" class="flex2" id="grid2">
+                                                            <div class="flexinner2" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                            </div>
+                                                   </div>
+                                                    <div fxFlex="16.66%" class="flex2" id="grid2">
+                                                        <div class="flexinner2" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                            (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                        </div>
+                                                    </div>
+                                                    <div fxFlex="16.66%" class="flex2" id="grid2">
+                                                        <div class="flexinner2" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                            (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                        </div>
+                                                    </div>
+                                                    <div fxFlex="16.66%" class="flex2" id="grid2">
+                                                        <div class="flexinner2" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                            (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                         </div>
+                                                    </div>            
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </div>
+                               
+                                <div #gridContainer4>
+                                        <ng-template #gridView4 let-grid4="grid4">
+                                            <div class="flex-col-4" id="flex4" fxFlex="100%" fxLayout="row">
+                                                <div class="DeleteDragDiv">
+                                                    <button mat-raised-button (click)="btnDelete($event)"><mat-icon>delete</mat-icon></button>
+                                                    <button mat-raised-button (click)="btnDelete($event)"><mat-icon>open_with</mat-icon></button>
+                                                    <div fxLayout="row">
+                                                        <div fxFlex="33.33%" class="flex4" id="grid4">
+                                                            <div class="flexinner4" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                (onDropSuccess)="transferDataDrop($event)">
+                                                            </div>
+                                                        </div>
+                                                        <div fxFlex="33.33%" class="flex4" id="grid4">
+                                                            <div class="flexinner4" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                            </div>
+                                                        </div>
+                                                        <div fxFlex="33.33%" class="flex4" id="grid4">
+                                                                <div class="flexinner4" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                    (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-template>
+                                    </div>
+                        
+                                    <div #gridContainer3>
+                                            <ng-template #gridView3 let-grid3="grid3">
+                                                <div class="flex-col-3" id="flex3" fxFlex="100%">
+                                                    <div class="DeleteDragDiv">
+                                                        <button mat-raised-button (click)="btnDelete($event)"><mat-icon>delete</mat-icon></button>
+                                                        <button mat-raised-button (click)="btnDelete($event)"><mat-icon>open_with</mat-icon></button>
+                                                        <div fxLayout="row">
+                                                            <div fxFlex="25%" class="flex3" id="grid3">
+                                                                <div class="flexinner3" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                    (onDropSuccess)="transferDataDrop($event)">
+                                                                </div>
+                                                            </div>
+                                                            <div fxFlex="25%" class="flex3" id="grid3">
+                                                                <div class="flexinner3" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                    (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div fxFlex="25%" class="flex3" id="grid3">
+                                                                    <div class="flexinner3" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                        (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                    </div>
+                                                                </div>
+                                                                <div fxFlex="25%" class="flex3" id="grid3">
+                                                                        <div class="flexinner3" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                            (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                        </div>
+                                                                    </div>    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ng-template>
+                                        </div>
+                                
+                                        <div #gridContainer2>
+                                                <ng-template #gridView2 let-grid2="grid2">
+                                                    <div class="flex-col-2" id="flex2" fxFlex="100%">
+                                                        <div class="DeleteDragDiv">
+                                                            <button mat-raised-button (click)="btnDelete($event)"><mat-icon>delete</mat-icon></button>
+                                                            <button mat-raised-button (click)="btnDelete($event)"><mat-icon>open_with</mat-icon></button>
+                                                            <div fxLayout="row">
+                                                                <div fxFlex="16.66%" class="flex2" id="grid2">
+                                                                    <div class="flexinner2" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                        (onDropSuccess)="transferDataDrop($event)">
+                                                                    </div>
+                                                                </div>
+                                                                <div fxFlex="16.66%" class="flex2" id="grid2">
+                                                                    <div class="flexinner2" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                        (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                    </div>
+                                                                </div>
+                                                                <div fxFlex="16.66%" class="flex2" id="grid2">
+                                                                        <div class="flexinner2" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                            (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                        </div>
+                                                               </div>
+                                                                <div fxFlex="16.66%" class="flex2" id="grid2">
+                                                                    <div class="flexinner2" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                        (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                    </div>
+                                                                </div>
+                                                                <div fxFlex="16.66%" class="flex2" id="grid2">
+                                                                    <div class="flexinner2" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                        (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                    </div>
+                                                                </div>
+                                                                <div fxFlex="16.66%" class="flex2" id="grid2">
+                                                                    <div class="flexinner2" dnd-droppable="true" dnd-draggable="true" [dropEnabled]="true" [dragEnabled]="true" 
+                                                                        (onDropSuccess)="transferDataDrop($event)">                                                                    
+                                                                     </div>
+                                                                </div>            
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </ng-template>
+                                            </div>                      
+                        <ng-template>
+                            <ng-container *ngTemplateOutlet="gridView12; context:grid12Context"></ng-container>
+                            <ng-container *ngTemplateOutlet="gridView6; context:grid6Context"></ng-container>
+                            <ng-container *ngTemplateOutlet="gridView4; context:grid4Context"></ng-container>
+                            <ng-container *ngTemplateOutlet="gridView3; context:grid3Context"></ng-container>
+                            <ng-container *ngTemplateOutlet="gridView2; context:grid2Context"></ng-container>
+                        </ng-template>
+    </mat-card>
+  </div>
+  </aside>---->
+  </section>

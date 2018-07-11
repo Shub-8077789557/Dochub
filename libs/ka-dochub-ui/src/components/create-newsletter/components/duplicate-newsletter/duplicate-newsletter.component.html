@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Duplicate Newsletter</h1>
+<!-- <form [formGroup]="Newslettername" (submit)="saveUser()"> -->
+ 
+   <label><u>Old Newsletter Name</u>:&nbsp;{{this.value}}</label>
+   <br>
+<mat-form-field>
+    <label>Enter New Newsletter Name:</label><input matInput #newslettername> 
+</mat-form-field>
+<br>
+<button _ngcontent-c1=""(click)="NewsletterCopied(newslettername.value);" color="primary" mat-raised-button="" type="submit" class="" ng-reflect-color="primary">
+  <span class="mat-save-wrapper">Create</span>
+  <div class="mat-button-ripple mat-ripple" matripple="" ng-reflect-centered="false" ng-reflect-disabled="false" ng-reflect-trigger="[object HTMLButtonElement]"></div>
+  <div class="mat-button-focus-overlay"></div>
+ </button>
+ <button _ngcontent-c1="" (click)="onNoClick();" color="primary" mat-raised-button="" type="submit" class="" ng-reflect-color="primary">
+  <span class="mat-save-wrapper">No</span>
+  <div class="mat-button-ripple mat-ripple" matripple="" ng-reflect-centered="false" ng-reflect-disabled="false" ng-reflect-trigger="[object HTMLButtonElement]"></div>
+  <div class="mat-button-focus-overlay"></div>
+ </button>
+<!-- </form> -->

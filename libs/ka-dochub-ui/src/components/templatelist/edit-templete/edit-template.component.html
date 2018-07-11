@@ -1,0 +1,35 @@
+<section>
+
+  <button color="primary" mat-raised-button="" type="submit" class="template-save" (click)=" onSaveClick(templatenameInput.value)"
+    type="submit" ng-reflect-color="primary">
+    <span class="mat-save-wrapper">Save</span>
+    <div class="mat-button-ripple mat-ripple" matripple="" ng-reflect-centered="false" ng-reflect-disabled="false" ng-reflect-trigger="[object HTMLButtonElement]"></div>
+    <div class="mat-button-focus-overlay"></div>
+  </button>
+
+  <button color="primary" mat-raised-button="" type="submit" class="template-cancel" ng-reflect-color="primary" (click)="onCancelClick()">
+    <span class="mat-save-wrapper">Cancel</span>
+    <div class="mat-button-ripple mat-ripple" matripple="" ng-reflect-centered="false" ng-reflect-disabled="false" ng-reflect-trigger="[object HTMLButtonElement]"></div>
+    <div class="mat-button-focus-overlay"></div>
+  </button>
+
+  <span class="template-name">Template Name</span>
+  <mat-form-field class="template-input">
+    <input matInput #templatenameInput placeholder="Templatename" value="{{templateData.templateName}}">
+  </mat-form-field>
+
+  <mat-card class="adminfroalaHeader">
+
+    <div style="position:absolute; top:5px;">Header</div>
+    <form [formGroup]="headerForm" style="top: 30px;left:0px; position: absolute;">
+      <app-froala-component formControlName="headerMarkup"></app-froala-component>
+    </form>
+
+    <div style="position:absolute; top:275px;">Footer</div>
+    <form [formGroup]="footerForm" style="position:absolute; top:300px; left:0px;">
+      <app-froala-component formControlName="footerMarkup"></app-froala-component>
+    </form>
+
+  </mat-card>
+
+</section>

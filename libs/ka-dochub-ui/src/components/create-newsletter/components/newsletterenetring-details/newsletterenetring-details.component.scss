@@ -1,0 +1,269 @@
+.resume-section{
+    font-size: 14px;
+    padding-left: 60px;
+    cursor: pointer;
+}
+
+.user-cover{
+    display: inline-block;
+    position: absolute;
+    right: 150px;
+    height: 20px;
+    width: 24px;
+    border-radius: 400px;
+    border: 2px solid #fff;
+}
+
+.user-name{
+    font-size: 14px;
+    display: block;
+    margin-top: -38px;
+    padding-left: 36px;
+    cursor: pointer;
+}
+
+.user-profile-list{
+    margin-top:10px;
+}
+
+.dropbtn {
+    color: white;
+    background-color: #0000ff;
+    margin-left: 975px;
+    margin-top: 10px;
+    margin-bottom: 9px;
+    padding: 5px;
+    font-size: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #0000ff;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right:-5px;
+    top:40px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #8b8b8b;
+    padding: 8px 16px;
+    font-size:14px;
+    border-bottom: 1px solid #ccc;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display:block;}
+
+.newsletter-title {
+    position: absolute;
+    top: 90px;
+    left:75px;
+    color: #000;
+    font-size: 17px;
+}
+
+.newsletter-save{
+    margin-top: 110px;
+    float: right;
+    margin-right: 110px;
+    display: block;
+    background-color: #3f51b5;
+    height: 34px; 
+}
+
+.newsletter-cancel{
+    margin-top: 110px;
+    float: right;
+    right:-10px;
+    display: block;
+    color: #000;
+    background-color: #fff;
+    height: 34px;
+    
+}
+
+.newsletter-input-title{
+    position: absolute;
+    left: 130px;
+    top: -82px;
+    color: #000;
+    padding-top: 210px;
+    font-size: 17px;
+}
+
+// .newsletter-input{
+//     position: absolute;
+//     top: 126px;
+//     height:20px;
+//     width:200px;
+//     border: 1px solid #ccc;
+//     left: 170px;
+// }
+
+.description-title {
+    font-size: 16px;
+    top: 10px;
+    position: absolute;
+}
+
+.newsletterPanel{
+    position: fixed;
+    top: 170px;
+    left: 90px;
+    width: 88%;
+    height:420px;
+}
+
+.newsletterPanelEdit{
+    margin-top: 17px;
+     height: 350px;
+     width: 1150px;
+     position:fixed;
+}
+
+.newsletterPanelEditHeader{
+    margin-left: -24px;
+    width: 1198px;
+    height: 35px;
+    position: absolute;
+    top: -1px;
+}
+
+.demo-tab-group {
+    border: 1px solid #e8e8e8;
+    width: 1196px;
+    position: absolute;
+    top: 0px;
+    margin-left: -24px;
+  }
+  
+  .demo-tab-content {
+    padding: 5px;
+    height: 335px;
+  }
+
+  button.edit-save {
+    float: right;
+    right: 190px;
+    top: -60px;
+    background-color: #004080;
+}
+
+.newspaper-title-input{
+    position: relative;
+    display: inline-block;
+    top: 105px;
+    left: 178px;
+    width: 200px;
+}
+  @media only screen and (max-width: 640px) {
+    .newsletter-title {
+        position: absolute;
+        left: 30px;  
+    }
+    .newsletter-input-title {
+        position: absolute;
+        left: 30px;
+    }
+    
+    .newsletter-input {
+        position: absolute;
+        left: 75px;
+    }
+    
+    .newsletter-save {
+        margin-top: 80px;
+    }
+    
+    .newsletter-cancel {
+        margin-top: 80px;
+    }
+
+    mat-card.newsletterPanel.mat-card {
+        position: absolute;
+        height: 410px;
+        left: 4px;
+    }
+    
+    mat-card.newsletterPanelEdit.mat-card {
+        position: absolute;
+        width: 290px;
+        right: 10px;
+    }
+    
+    .mat-tab-labels {
+        width: 500px;
+    }
+    
+    .fr-box.fr-basic.fr-top {
+        position: absolute;
+        width: 323px;
+        left: 7px;
+    }
+
+    mat-ink-bar.mat-ink-bar {
+        margin-left: 8px;
+    }
+
+    button.edit-save.mat-raised-button.mat-primary {
+        margin-top: 130px;
+    }
+  }
+
+  @media(min-width:411px){
+    mat-card.newsletterPanelEdit.mat-card {
+      position: absolute;
+      width: 339px;
+      right: 9px;
+  }
+  
+  }
+
+  @media(min-width:768px){
+   mat-card.newsletterPanel.mat-card{
+        left:21px;
+       width:88%;
+       position:fixed;
+       }
+       
+     mat-card.newsletterPanelEdit.mat-card{
+       position:absolute;
+       width:628px;
+       right:22px;
+       } 
+  }
+
+  @media (min-width:1024px) and (max-width:1366px){
+   mat-card.newsletterPanel.mat-card{
+        left:34px;
+       width:91%;
+       box-shadow: 2px 2px 7px 6px #888888;
+       position:fixed;
+       }
+       
+     mat-card.newsletterPanelEdit.mat-card{
+       position:absolute;
+       box-shadow: 2px 2px 7px 6px #888888;
+       width:1170px;
+       left:35px;
+       }
+  }
+ 

@@ -1,0 +1,58 @@
+  
+
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="over">
+    <mat-toolbar color="primary">
+      <p>Dochub</p>
+      <button mat-icon-button (click)="sidenav.toggle()" class="mat-icon-button sidenav-toggle-button"  [hidden]="!sidenav.opened">
+        <mat-icon aria-label="Menu" class="material-icons" >close</mat-icon> 
+      </button>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item class="sidenav-link" [routerLink]="['/login']" (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>home</mat-icon>
+        <span class="title" mat-line color="primary">Home</span>
+      </a>
+      <a mat-list-item class="sidenav-link" [routerLink]="['/resume']" (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>assignment</mat-icon>
+        <span class="title" mat-line>Resume</span>
+      </a>
+      <a mat-list-item class="sidenav-link" [routerLink]="['/newsletter']" (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>description</mat-icon>
+        <span class="title" mat-line>News Letter</span>
+      </a>
+      <a mat-list-item class="sidenav-link" [routerLink]="['/logout']" (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>lock</mat-icon>
+        <span class="title" mat-line>Logout</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-toolbar id="appToolbar" [ngClass]="{'toolbar-fullscreen': (fullscreen$ | async)}" color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()" class="mat-icon-button sidenav-toggle-button" [hidden]="sidenav.opened">
+            <mat-icon aria-label="Menu" class="material-icons">menu</mat-icon>
+    </button>
+    <h1 class="component-title">
+      <a id="button-resume" routerLink="/demo" mat-button>Resume</a>
+      <button id="button-newsletter" [routerLink]="['/newsletter']" mat-button>News Letter</button>
+      <button id="button-newsletter" [routerLink]="['/admindash-resume']" mat-button>Admin Resume</button>
+      <button id="button-newsletter" [routerLink]="['/form']" mat-button>Form</button>
+      <button id="button-newsletter" [routerLink]="['/newsletterform']" mat-button>Newsletter Form</button>
+      </h1>   
+      
+      <span class="toolbar-spacer">
+        <button mat-button class="mat-icon-button" [matMenuTriggerFor]="menu">
+          <mat-icon>person</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" class="dropdown">
+          <button mat-menu-item [routerLink]="['/profile']" ><mat-icon>face</mat-icon>Profile</button>  
+          <button mat-menu-item [routerLink]="['/logout']" ><mat-icon>lock</mat-icon>Logout</button>
+        </mat-menu>
+      </span>
+    
+     <!-- <span class="toolbar-filler"></span> 
+    <button id="button-login" mat-button [routerLink]="['/signupin']" *ngIf="!(user | async)">Log In</button>
+     <button id="button-logout" [routerLink]="['/comp1']" mat-button style="float:right">Log Out</button> -->
+     </mat-toolbar>
+  <app-breadcrumb></app-breadcrumb>
+  <router-outlet></router-outlet>
+</mat-sidenav-container>

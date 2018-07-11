@@ -1,0 +1,20 @@
+<section>
+    <button 
+  color="primary" mat-raised-button="" type="submit" class="structure-save" (click)="StructureSave(structurename.value);" ng-reflect-color="primary">
+      <span class="mat-save-wrapper">Save</span>
+     </button>
+     <button 
+ color="primary" mat-raised-button="" type="submit" class="structure-cancel"  ng-reflect-color="primary">
+      <span class="mat-save-wrapper">Cancel</span>
+     </button> 
+     <span class="structure-title">Structure Name</span>
+     <mat-form-field class="structure-input">
+        <input matInput #structurename  placeholder="Structurename">
+      </mat-form-field>
+     <mat-card class="structfroalaHeader"> 
+        <div style="position:absolute; top:20px;">Content of Document</div>
+        <form [formGroup]="form4"  style="top: 50px;left:0px; position: absolute;">
+            <app-froala-component formControlName="structuremarkup"></app-froala-component>    
+               </form>
+    </mat-card>
+</section>

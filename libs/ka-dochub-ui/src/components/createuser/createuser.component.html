@@ -1,0 +1,120 @@
+<app-nav-bar></app-nav-bar>
+
+<mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>create User</ng-template>
+      <form (submit)="onRegisterSubmit()">
+
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="Name" name="Name" placeholder="name" class="example-full-width" required>
+            <mat-error *ngIf="_RegisterForm.hasError('required')">
+              Name is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="Email" name="Email" placeholder="email" class="example-full-width" required>
+            <mat-error *ngIf="_RegisterForm.hasError('required')">
+              Email is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="Username" name="Username" placeholder="UserName" class="example-full-width" required>
+            <mat-error *ngIf="_RegisterForm.hasError('required')">
+              UserName is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="Password" name="Password" placeholder="Password" [type]=" hide ? 'password' : 'text'" class="example-full-width"
+              required>
+            <mat-icon matSuffix (click)="hide = !hide">{{ hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+            <mat-error *ngIf="_RegisterForm.hasError('required')">
+              Password is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-select placeholder="Roles"  [(ngModel)]="Role" name="Roles"> 
+              <mat-option  *ngFor="let role of roles" [value]="role.role" required>
+                {{role.role}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="_RegisterForm.hasError('required')">
+              Select User Role
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          ACCESS:
+          <div *ngFor="let ac of access">
+            <mat-checkbox  value="ac.access" [(ngModel)]="Read" name="Read" color="primary">{{ac.read}}</mat-checkbox>
+            <mat-checkbox value="ac.access" [(ngModel)]="Write"  name="Write" color="primary">{{ac.write}}</mat-checkbox>
+            <mat-checkbox value="ac.access" [(ngModel)]="Delete" name="Delete" color="primary">{{ac.delete}}</mat-checkbox>
+          </div>
+          <div class="button-row">
+            <button mat-raised-button type="submit" color="primary">Create</button>
+            <button mat-raised-button color="warn" type="reset">Cancel</button>
+          </div>
+
+        </form>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Update User</ng-template>
+     
+      <form (submit)="onUpdate()">
+          <mat-form-field class="example-full-width">
+              <mat-select placeholder="Select User" (change)='checkuser()'  [(ngModel)]="SelectedUser" name="User"> 
+                <mat-option  *ngFor="let user of users" [value]="user.name" required>
+                  {{user.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="_RegisterForm.hasError('required')">
+                Select User Role
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-select placeholder="Roles" [(value)]="userroles"  name="Roles"> 
+              <mat-option [value]="userroles">
+                {{userroles}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="_RegisterForm.hasError('required')">
+              Select User Role
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          ACCESS:
+          <div *ngFor="let ac of access">
+            <mat-checkbox  value="ac.access" [(ngModel)]="Read" name="Read" color="primary">{{ac.read}}</mat-checkbox>
+            <mat-checkbox value="ac.access" [(ngModel)]="Write"  name="Write" color="primary">{{ac.write}}</mat-checkbox>
+            <mat-checkbox value="ac.access" [(ngModel)]="Delete" name="Delete" color="primary">{{ac.delete}}</mat-checkbox>
+          </div>
+          <div class="button-row">
+            <button mat-raised-button type="submit" color="primary">Update</button>
+            <button mat-raised-button color="warn" type="reset">Cancel</button>
+          </div>
+
+        </form>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+{{userroles}}

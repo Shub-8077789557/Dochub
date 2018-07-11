@@ -1,0 +1,21 @@
+// #button-structure{
+//     display:none;
+// }
+
+// #button-template{
+//     display:none;
+// }
+
+button.mat-icon-button.mat-button {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+}
+
+#appToolbar {
+    background-image: url(/assets/img/header_background.png);
+}
+
+mat-toolbar.mat-toolbar.mat-primary.mat-toolbar-single-row {
+    background-image: url(/assets/img/header_background.png);
+}
